@@ -1,5 +1,5 @@
 /* Copyright (c) 2014, 2020, Oracle and/or its affiliates. */
-package event;
+package com.myproject.runner.event;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -8,7 +8,7 @@ import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAmount;
 
 /**
- * Implement a single event inspired by Algorithm 4.6 in "Operating System Principles"
+ * Implement a single com.myproject.runner.event inspired by Algorithm 4.6 in "Operating System Principles"
  * by Per Brinch Hansen, 1973.
  */
 public class SingleEvent {
@@ -18,7 +18,7 @@ public class SingleEvent {
     private final String message;
 
     /**
-     * Create event.
+     * Create com.myproject.runner.event.
      *
      * @param message
      */
@@ -27,7 +27,7 @@ public class SingleEvent {
     }
 
     /**
-     * Reset the event so It can be reused (
+     * Reset the com.myproject.runner.event so It can be reused (
      */
     public void reset() {
         synchronized (this) {
@@ -36,7 +36,7 @@ public class SingleEvent {
     }
 
     /**
-     * Cause the event to happen.
+     * Cause the com.myproject.runner.event to happen.
      */
     public void cause() {
         synchronized (this) {
@@ -46,7 +46,7 @@ public class SingleEvent {
     }
 
     /**
-     * Get the event flag. True if the event has happend.
+     * Get the com.myproject.runner.event flag. True if the com.myproject.runner.event has happend.
      *
      * @return
      */
@@ -57,7 +57,7 @@ public class SingleEvent {
     }
 
     /**
-     * Wait for the event, but time out with exception if it does not happen before the timeout.
+     * Wait for the com.myproject.runner.event, but time out with com.myproject.runner.exception if it does not happen before the timeout.
      *
      * @param timeout
      * @throws IOException
@@ -76,7 +76,7 @@ public class SingleEvent {
                         // Ignore and loop;
                     }
                 } else {
-                    throw new IOException("Wait for event '" + message
+                    throw new IOException("Wait for com.myproject.runner.event '" + message
                             + "' took more than " + timeout);
                 }
             }
@@ -85,7 +85,7 @@ public class SingleEvent {
     }
 
     /**
-     * Wait for the event, but time out with exception if it does not happen before the given instant.
+     * Wait for the com.myproject.runner.event, but time out with com.myproject.runner.exception if it does not happen before the given instant.
      *
      * @param end
      * @throws IOException
@@ -95,7 +95,7 @@ public class SingleEvent {
     }
 
     /**
-     * Wait (forever) for the event.
+     * Wait (forever) for the com.myproject.runner.event.
      */
     public void await() {
         synchronized (this) {

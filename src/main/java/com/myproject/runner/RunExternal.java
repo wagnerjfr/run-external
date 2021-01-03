@@ -1,8 +1,8 @@
 /* Copyright (c) 2009, 2020, Oracle and/or its affiliates. All rights reserved. */
-package com.oracle.mysql.runexternal;
+package com.myproject.runner;
 
-import exception.RunnerException;
-import util.LoggerFactory;
+import com.myproject.runner.exception.RunnerException;
+import com.myproject.runner.util.LoggerFactory;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -67,7 +67,7 @@ public class RunExternal extends AbstractRunExternal {
 
     /**
      * Get a stream from the ProcessBuilder's redirected stdout file. Throws
-     * exception if file doesn't exist of if process has not started.
+     * com.myproject.runner.exception if file doesn't exist of if process has not started.
      *
      * @return BufferedReader
      * @throws FileNotFoundException
@@ -80,7 +80,7 @@ public class RunExternal extends AbstractRunExternal {
 
     /**
      * Get a stream from the ProcessBuilder's redirected stderr file. Throws
-     * exception if file doesn't exist of if process has not started.
+     * com.myproject.runner.exception if file doesn't exist of if process has not started.
      *
      * @return BufferedReader
      * @throws FileNotFoundException
@@ -130,7 +130,7 @@ public class RunExternal extends AbstractRunExternal {
             } catch (IOException ex) {
                 LOG.log(Level.SEVERE, "Reading recorded output file '"
                         + stdoutFile.toString()
-                        + "' caused exception {0}",
+                        + "' caused com.myproject.runner.exception {0}",
                         ex.getMessage());
             }
         }
@@ -297,7 +297,7 @@ public class RunExternal extends AbstractRunExternal {
 
     /**
      * Returns the input stream that can read from stdout for this process. This
-     * method will throw an exception if the process is configured to write
+     * method will throw an com.myproject.runner.exception if the process is configured to write
      * directly to file and does not expose an input stream for stdout.
      *
      *
@@ -323,7 +323,7 @@ public class RunExternal extends AbstractRunExternal {
 
     /**
      * Returns the input stream that can read from stderr for this process. This
-     * method will throw an exception if the process is configured to write
+     * method will throw an com.myproject.runner.exception if the process is configured to write
      * directly to file and does not expose an input stream for stdout.
      *
      *

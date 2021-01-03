@@ -1,6 +1,6 @@
 /* Copyright (c) 2009, 2020, Oracle and/or its affiliates. All rights reserved. */
 
-package util;
+package com.myproject.runner.util;
 
 import java.util.logging.Logger;
 
