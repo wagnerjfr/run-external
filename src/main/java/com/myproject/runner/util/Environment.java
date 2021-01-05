@@ -1,6 +1,6 @@
 /* Copyright (c) 2012, 2020, Oracle and/or its affiliates. All rights reserved. */
 
-package util;
+package com.myproject.runner.util;
 
 /**
  *

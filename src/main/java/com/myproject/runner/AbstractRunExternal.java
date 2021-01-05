@@ -1,12 +1,12 @@
 /* Copyright (c) 2009, 2020, Oracle and/or its affiliates. */
 
-package com.oracle.mysql.runexternal;
+package com.myproject.runner;
 
 import com.google.common.util.concurrent.Uninterruptibles;
-import event.SingleEvent;
-import exception.RunnerException;
-import util.Environment;
-import util.LoggerFactory;
+import com.myproject.runner.event.SingleEvent;
+import com.myproject.runner.exception.RunnerException;
+import com.myproject.runner.util.Environment;
+import com.myproject.runner.util.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -126,7 +126,7 @@ public abstract class AbstractRunExternal implements Runnable {
             if (myProc == null) {
                 /* On very slow machines (i.e. windows rigs) it is possible that
                 exitcode can be requested before the value is available so try to
-                sleep and then check again before throwing an exception */
+                sleep and then check again before throwing an com.myproject.runner.exception */
                 LOG.warning("exitCode is -1 and myProc is null when getExitCode was called. "
                         + "Will try to sleep before checking exitCode again");
                 Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
@@ -144,9 +144,9 @@ public abstract class AbstractRunExternal implements Runnable {
     }
 
     /**
-     * Get the exception message from this run.
+     * Get the com.myproject.runner.exception message from this run.
      *
-     * @return exception message
+     * @return com.myproject.runner.exception message
      */
     public String getExceptionMsg() {
         return this.exceptionMsg;
@@ -235,7 +235,7 @@ public abstract class AbstractRunExternal implements Runnable {
                     finished.cause();
                     LOG.severe("Could not fork process, ran out of retries.");
                     exceptionMsg = "Failed to fork process after retries";
-                    gotException = new IOException("Failed to fork process, last exception: ", lastEx);
+                    gotException = new IOException("Failed to fork process, last com.myproject.runner.exception: ", lastEx);
                 } else {
                     LOG.finer("process started");
                     exitCode = myProc.waitFor();
@@ -351,9 +351,9 @@ public abstract class AbstractRunExternal implements Runnable {
     }
 
     /**
-     * Get the exception from this process.
+     * Get the com.myproject.runner.exception from this process.
      *
-     * @return exception from this process
+     * @return com.myproject.runner.exception from this process
      */
     public Exception getException() {
         return this.gotException;

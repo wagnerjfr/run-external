@@ -1,9 +1,9 @@
 /* Copyright (c) 2009, 2020, Oracle and/or its affiliates. All rights reserved. */
 
-package exception;
+package com.myproject.runner.exception;
 
 /**
- * The RunnerException class is the generic exception class
+ * The RunnerException class is the generic com.myproject.runner.exception class
  * to be used when something in the JET test engine fails. Create any
  * more specific Exception classes as subclasses of RunnerException
  */
@@ -64,36 +64,36 @@ public class RunnerException extends Exception {
     }
 
     /**
-     * Constructor. No message is allocated, and no exception is linked
+     * Constructor. No message is allocated, and no com.myproject.runner.exception is linked
      */
     public RunnerException() {
         super();
     }
 
     /**
-     * Constructor taking a message as parameter. No exception is linked.
+     * Constructor taking a message as parameter. No com.myproject.runner.exception is linked.
      *
-     * @param message message explaining why the exception was thrown.
+     * @param message message explaining why the com.myproject.runner.exception was thrown.
      */
     public RunnerException(String message) {
         super(message);
     }
 
     /**
-     * Constructor linking an existing exception to this exception.
+     * Constructor linking an existing com.myproject.runner.exception to this com.myproject.runner.exception.
      *
-     * @param e linked exception.
+     * @param e linked com.myproject.runner.exception.
      */
     public RunnerException(Exception e) {
         super(e);
     }
 
     /**
-     * Constructor taking a message as parameter and links the exception
+     * Constructor taking a message as parameter and links the com.myproject.runner.exception
      * with another
      *
-     * @param message message explaining why the exception was thrown.
-     * @param e linked exception.
+     * @param message message explaining why the com.myproject.runner.exception was thrown.
+     * @param e linked com.myproject.runner.exception.
      */
     public RunnerException(String message, Exception e) {
         super(message, e);
