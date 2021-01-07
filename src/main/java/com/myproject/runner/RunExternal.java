@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.file.Files;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -201,13 +202,17 @@ public class RunExternal extends AbstractRunExternal {
             throw new RunnerException("Cannot delete logs while process is still running");
         }
         if (stderrFile != null) {
-            if (!stderrFile.delete()) {
+            try {
+                Files.deleteIfExists(stderrFile.toPath());
+            } catch (IOException e) {
                 LOG.log(Level.WARNING, "Failed to delete {0}", stderrFile.getPath());
                 ret = false;
             }
         }
         if (stdoutFile != null) {
-            if (!stdoutFile.delete()) {
+            try {
+                Files.deleteIfExists(stdoutFile.toPath());
+            } catch (IOException e) {
                 LOG.log(Level.WARNING, "Failed to delete {0}", stdoutFile.getPath());
                 ret = false;
             }
@@ -414,8 +419,7 @@ public class RunExternal extends AbstractRunExternal {
     public List<String> getCommandOutput() throws RunnerException {
         List<String> response;
         try {
-            try (BufferedReader bufferedReader = new BufferedReader(
-                    new InputStreamReader(myProc.getInputStream()))) {
+            try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(myProc.getInputStream()))) {
                 response = new ArrayList<>();
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
