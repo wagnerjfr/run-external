@@ -18,5 +18,5 @@ Inside `dependencies` block, add:
 ```
 
 ## Samples
-- [Java version](https://github.com/wagnerjfr/run-external/blob/main/samples/JavaVersion.java)
+- [Java version](https://github.com/wagnerjfr/run-external/blob/main/src/main/java/com/myproject/runner/samples/JavaVersion.java)
 - [Oracle Cloud CLI](https://github.com/wagnerjfr/run-external/blob/main/samples/OracleCloudCLI.java)
