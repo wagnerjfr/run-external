@@ -18,5 +18,7 @@ Inside `dependencies` block, add:
 ```
 
 ## Samples
+:bulb: Open the project in IntelliJ (or other IDE) to run the examples.
+
 - [Java version](https://github.com/wagnerjfr/run-external/blob/main/src/main/java/com/myproject/runner/samples/JavaVersion.java)
 - [Oracle Cloud CLI](https://github.com/wagnerjfr/run-external/blob/main/src/main/java/com/myproject/runner/samples/OracleCloudCLI.java)
